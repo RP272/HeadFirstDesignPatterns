@@ -1,3 +1,5 @@
+package WelcomeToDesignPatterns;
+
 public class MallardDuck extends Duck{
     public MallardDuck(){
         quackBehaviour = new Quack();

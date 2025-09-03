@@ -1,3 +1,5 @@
+package WelcomeToDesignPatterns;
+
 public class Squeak implements QuackBehaviour{
     @Override
     public void quack() {
