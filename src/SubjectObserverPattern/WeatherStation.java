@@ -4,7 +4,8 @@ public class WeatherStation {
     public static void main(String[] args) {
         WeatherData weatherData = new WeatherData();
         CurrentConditionDisplay currentConditionDisplay = new CurrentConditionDisplay(weatherData);
-        HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherData);
+//        HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherData);
+        ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
 
         weatherData.setMeasurements(12.34f, 35.6f, 1.45f);
         weatherData.setMeasurements(43.21f, 65.3f, 5.41f);
