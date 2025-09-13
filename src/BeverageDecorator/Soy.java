@@ -1,9 +1,17 @@
 package BeverageDecorator;
 
+import java.util.Map;
+
 public class Soy extends CondimentDecorator{
     private final Beverage inner;
-    public Soy(Beverage beverage){
+    public Soy(Beverage beverage, Size s){
         inner = beverage;
+        size = s;
+        prices = Map.of(
+                Size.TALL, 0.15,
+                Size.GRANDE, 0.2,
+                Size.VENTI, 0.25
+        );
     }
     @Override
     public String getDescription() {
@@ -12,6 +20,6 @@ public class Soy extends CondimentDecorator{
 
     @Override
     public double cost() {
-        return 0.15 + inner.cost();
+        return getPriceBySize(size) + inner.cost();
     }
 }

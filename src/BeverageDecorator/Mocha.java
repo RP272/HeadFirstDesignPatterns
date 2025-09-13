@@ -1,9 +1,17 @@
 package BeverageDecorator;
 
+import java.util.Map;
+
 public class Mocha extends CondimentDecorator{
     private final Beverage inner;
-    public Mocha(Beverage beverage){
+    public Mocha(Beverage beverage, Size s){
         inner = beverage;
+        size = s;
+        prices = Map.of(
+                Size.TALL, 0.2,
+                Size.GRANDE, 0.25,
+                Size.VENTI, 0.3
+        );
     }
 
     @Override
@@ -13,6 +21,6 @@ public class Mocha extends CondimentDecorator{
 
     @Override
     public double cost() {
-        return 0.20 + inner.cost();
+        return getPriceBySize(size) + inner.cost();
     }
 }

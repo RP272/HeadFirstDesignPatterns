@@ -2,19 +2,19 @@ package BeverageDecorator;
 
 public class StarbuzzCoffee {
     public static void main(String[] args) {
-        Beverage beverage = new Espresso();
+        Beverage beverage = new Espresso(Size.TALL);
         System.out.println(beverage.getDescription() + " $" + beverage.cost());
 
-        Beverage beverage1 = new HouseBlend();
-        beverage1 = new Mocha(beverage1);
-        beverage1 = new Mocha(beverage1);
-        beverage1 = new Whip(beverage1);
+        Beverage beverage1 = new HouseBlend(Size.VENTI);
+        beverage1 = new Mocha(beverage1, Size.TALL);
+        beverage1 = new Mocha(beverage1, Size.TALL);
+        beverage1 = new Whip(beverage1, Size.TALL);
         System.out.println(beverage1.getDescription() + " $" + beverage1.cost());
 
-        Beverage beverage2 = new HouseBlend();
-        beverage2 = new Soy(beverage2);
-        beverage2 = new Mocha(beverage2);
-        beverage2 = new Whip(beverage2);
+        Beverage beverage2 = new HouseBlend(Size.GRANDE);
+        beverage2 = new Soy(beverage2, Size.TALL);
+        beverage2 = new Mocha(beverage2, Size.TALL);
+        beverage2 = new Whip(beverage2, Size.TALL);
         System.out.println(beverage2.getDescription() + " $" + beverage2.cost());
     }
 }
