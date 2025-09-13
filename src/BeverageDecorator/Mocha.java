@@ -4,14 +4,12 @@ import java.util.Map;
 
 public class Mocha extends CondimentDecorator{
     private final Beverage inner;
-    public Mocha(Beverage beverage, Size s){
+    public Mocha(Beverage beverage){
         inner = beverage;
-        size = s;
-        prices = Map.of(
-                Size.TALL, 0.2,
-                Size.GRANDE, 0.25,
-                Size.VENTI, 0.3
-        );
+    }
+
+    public Size getSize(){
+        return inner.getSize();
     }
 
     @Override
@@ -21,6 +19,18 @@ public class Mocha extends CondimentDecorator{
 
     @Override
     public double cost() {
-        return getPriceBySize(size) + inner.cost();
+        double cost = inner.cost();
+        switch (getSize()){
+            case TALL:{
+                cost += 0.1;
+            }
+            case GRANDE:{
+                cost += 0.15;
+            }
+            case VENTI:{
+                cost += 0.2;
+            }
+        }
+        return cost;
     }
 }
