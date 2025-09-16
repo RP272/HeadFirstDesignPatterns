@@ -1,6 +1,6 @@
 package Pizzeria;
 
-public class VeggiePizza implements Pizza {
+public class VeggiePizza extends Pizza {
     @Override
     public void prepare() {
 

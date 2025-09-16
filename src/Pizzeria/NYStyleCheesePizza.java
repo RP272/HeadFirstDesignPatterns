@@ -1,23 +1,11 @@
 package Pizzeria;
 
-public class NYStyleCheesePizza implements Pizza {
-    @Override
-    public void prepare() {
+public class NYStyleCheesePizza extends Pizza {
+    public NYStyleCheesePizza(){
+        name = "NY Style Sauce and  Cheese Pizza";
+        dough = "Thin Crust Dough";
+        sauce = "Marinara Sauce";
 
-    }
-
-    @Override
-    public void bake() {
-
-    }
-
-    @Override
-    public void cut() {
-
-    }
-
-    @Override
-    public void box() {
-
+        toppings.add("Grated Reggiano Cheese");
     }
 }
